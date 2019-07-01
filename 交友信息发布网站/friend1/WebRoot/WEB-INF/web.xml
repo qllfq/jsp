@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <web-app>是根标记 -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>friend1</display-name>
+<!-- Servlet类的字节码文件保存到指定的目录后，必须为Tomcat服务器编写一个部署文件，只有这样，Tomcat服务器才会按用户的请求使用Servlet字节码文件创建对象 -->
+<servlet><!-- 标记 -->
+	<servlet-name>register</servlet-name><!-- Tomcat服务器创建的servlet名字 -->
+	<servlet-class>myservlet.control.HandleRegister</servlet-class><!-- 指定Tomcat服务器用哪个Servlet类来创建servlet -->
+</servlet>
+<servlet-mapping><!-- 标记 -->
+	<servlet-name>register</servlet-name>
+	<url-pattern>/helpRegister</url-pattern><!-- 指定用户用怎样的url格式来请求servlet -->
+</servlet-mapping>
+<servlet>
+	<servlet-name>login</servlet-name>
+	<servlet-class>myservlet.control.HandleLogin</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>login</servlet-name>
+	<url-pattern>/helpLogin</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>upload</servlet-name>
+	<servlet-class>myservlet.control.HandleUpload</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>upload</servlet-name>
+	<url-pattern>/helpUpload</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>SublistServlet</servlet-name>
+	<servlet-class>myservlet.control.SublistServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>SublistServlet</servlet-name>
+	<url-pattern>/helpShowMember</url-pattern>
+</servlet-mapping>
+
+<!-- <servlet>
+	<servlet-name>lookRecord</servlet-name>
+	<servlet-class>myservlet.control.HandleDatabase</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>lookRecord</servlet-name>
+	<url-pattern>/helpShowMember</url-pattern>
+</servlet-mapping> -->
+<servlet>
+	<servlet-name>modifyPassword</servlet-name>
+	<servlet-class>myservlet.control.HandlePassword</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>modifyPassword</servlet-name>
+	<url-pattern>/helpModifyPassword</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>modifyOldMess</servlet-name>
+	<servlet-class>myservlet.control.HandleModifyMess</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>modifyOldMess</servlet-name>
+	<url-pattern>/helpModifyMess</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>exit</servlet-name>
+	<servlet-class>myservlet.control.HandleExit</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>exit</servlet-name>
+	<url-pattern>/helpExitLogin</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>leavemsg</servlet-name>
+	<servlet-class>myservlet.control.LeaveMessageServlet</servlet-class>
+</servlet>
+  <servlet>
+    <servlet-name>ShowMessageServlet</servlet-name>
+    <servlet-class>myservlet.control.ShowMessageServlet</servlet-class>
+  </servlet>
+
+<servlet-mapping>
+	<servlet-name>leavemsg</servlet-name>
+	<url-pattern>/LeaveMessageServlet</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowMessageServlet</servlet-name>
+    <url-pattern>/ShowMessageServlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>
